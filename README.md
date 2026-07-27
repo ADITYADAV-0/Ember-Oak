@@ -1,114 +1,424 @@
 # Ember & Oak - Production-Ready Backend API
 
-Enterprise-grade Node.js + Express + MongoDB Atlas backend for **Ember & Oak**, a luxury farm-to-table restaurant application featuring JWT Authentication, Google OAuth 2.0, Role-Based Access Control (RBAC), and automated data seeding.
+> An AI-powered SaaS platform that transforms restaurant operations through digital automation, real-time management, and intelligent business insights.
+
+![License](https://img.shields.io/badge/License-MIT-green)
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-success)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen)
+![Status](https://img.shields.io/badge/Status-Completed-orange)
 
 ---
 
-## 🚀 Tech Stack
+# 📖 Overview
 
-- **Runtime**: Node.js
-- **Framework**: Express.js (v5)
-- **Database**: MongoDB Atlas / Mongoose (v9)
-- **Authentication**: JWT (JSON Web Tokens) & Google OAuth (`google-auth-library`)
-- **Security**: Helmet, CORS, Express Rate Limit, bcryptjs
-- **Validation**: express-validator
-- **Utilities**: Morgan (HTTP logger), Compression, Cookie-Parser, dotenv
+The **Smart Restaurant Management System** is a modern SaaS platform developed for **VibeAthon 6.0**. It solves common restaurant operational challenges by digitizing the complete workflow—from customer reservations and ordering to inventory management, billing, analytics, and AI-powered business insights.
+
+Unlike traditional restaurant software, our platform connects **customers, restaurant staff, kitchen, and management** into one intelligent ecosystem that improves efficiency, customer satisfaction, and business growth.
 
 ---
 
-## 📁 Directory Architecture (MVC)
+# 🚀 Problem Statement
+
+Many restaurants still rely on manual processes that lead to:
+
+- Long customer waiting times
+- No live food availability
+- Manual billing
+- Poor inventory management
+- Staff coordination issues
+- Lack of business analytics
+- Communication delays between kitchen and customers
+
+Our solution addresses these challenges using automation and AI.
+
+---
+
+# ✨ Features
+
+## 👨‍🍳 Customer Module
+
+- Digital Menu
+- Live Item Availability
+- QR Menu
+- Smart Table Reservation
+- Online Ordering
+- Live Order Tracking
+- Customer Notifications
+- Digital Payments
+- Order History
+
+---
+
+## 🏢 Restaurant Management
+
+- Admin Dashboard
+- Table Management
+- Order Management
+- Staff Management
+- Customer Management
+- Inventory Tracking
+- Billing System
+- Sales Reports
+- Business Analytics
+
+---
+
+## 🤖 AI Features
+
+- Personalized Food Recommendations
+- Inventory Prediction
+- Demand Forecasting
+- AI Chat Assistant
+- Smart Notifications
+- Operational Insights
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React.js
+- Next.js
+- Tailwind CSS
+- ShadCN UI
+
+## Backend
+
+- Node.js
+- Express.js
+
+## Database
+
+- MongoDB Atlas
+
+## Authentication
+
+- JWT Authentication
+- Google OAuth
+- Email OTP Verification
+
+
+## Deployment
+
+- Netlify
+- Render
+
+## Version Control
+
+- Git & GitHub
+
+---
+
+# 🏗 System Architecture
 
 ```
-server/
-├── config/
-│   ├── db.js                 # MongoDB connection logic
-│   └── googleAuth.js         # Google OAuth ID token verification
-├── constants/
-│   ├── roles.js              # User roles (customer, waiter, chef, host, manager, admin)
-│   └── status.js             # Order, reservation, and table status enums
-├── controllers/              # Request handlers (Auth, User, Menu, Order, Reservation, Table, Loyalty, Admin)
-├── middleware/               # Auth protection, RBAC, Error handling, Validation, Rate limiters
-├── models/                   # Mongoose schemas (User, MenuItem, Category, Order, Reservation, Table, Loyalty, Settings)
-├── routes/                   # RESTful API routers
-├── services/                 # Business logic layer
-├── utils/
-│   ├── jwt.js                # JWT sign & cookie helpers
-│   ├── responseHandler.js    # Uniform API JSON formatter
-│   └── seed.js               # Database seeder script
-├── validators/               # Input validation chains
-├── .env.example              # Environment variables template
-├── app.js                    # Express app initialization
-├── server.js                 # HTTP listener entrypoint
-├── API_DOCUMENTATION.md      # Detailed API Endpoints specification
-├── DEPLOYMENT.md             # Render, Netlify & Atlas deployment guide
-└── package.json              # Project dependencies & scripts
+                    Customer
+                        │
+                        ▼
+              React / Next.js Frontend
+                        │
+                REST API + Socket.IO
+                        │
+                        ▼
+            Node.js + Express Backend
+                        │
+      ┌─────────────────┼─────────────────┐
+      │                 │                 │
+      ▼                 ▼                 ▼
+ MongoDB           Gemini API        Cloud Storage
+      │
+      ▼
+   Admin Dashboard
 ```
 
 ---
 
-## ⚙️ Quick Start & Local Setup
+# 🔄 Workflow
 
-### 1. Installation
+```
+Customer Login
+        │
+        ▼
+Browse Digital Menu
+        │
+        ▼
+Reserve Table
+        │
+        ▼
+Place Order
+        │
+        ▼
+Kitchen Receives Order
+        │
+        ▼
+Order Preparation
+        │
+        ▼
+Live Order Tracking
+        │
+        ▼
+Payment
+        │
+        ▼
+Inventory Updated
+        │
+        ▼
+Analytics Dashboard
+        │
+        ▼
+AI Business Insights
+```
 
-Navigate into the server directory and install dependencies:
+---
+
+# 📂 Project Structure
+
+```
+Restaurant-Management-System
+│
+├── client/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   └── assets/
+│
+├── server/
+│   ├── controllers/
+│   ├── routes/
+│   ├── middleware/
+│   ├── models/
+│   ├── config/
+│   └── utils/
+│
+├── public/
+├── README.md
+└── package.json
+```
+
+---
+
+# 📸 Major Modules
+
+### Customer Portal
+
+- Register/Login
+- Browse Menu
+- Reserve Table
+- Place Orders
+- Live Tracking
+
+### Restaurant Dashboard
+
+- Dashboard Overview
+- Inventory
+- Orders
+- Tables
+- Staff
+- Customers
+- Sales Analytics
+
+### AI Module
+
+- Recommendation Engine
+- Demand Prediction
+- Inventory Forecast
+- Smart Alerts
+
+---
+
+# 🎯 User Stories Completed
+
+✅ Modern User Interface
+
+✅ Secure Authentication
+
+✅ Google OAuth
+
+✅ Email OTP Authentication
+
+✅ Digital Menu
+
+✅ Live Item Availability
+
+✅ Smart Reservation
+
+✅ Order Management
+
+✅ Queue Management
+
+✅ Billing System
+
+✅ Inventory Management
+
+✅ Staff Management
+
+✅ Analytics Dashboard
+
+✅ AI Recommendations
+
+✅ Demand Forecasting
+
+---
+
+# 📈 Expected Benefits
+
+- Reduced waiting time
+- Better customer experience
+- Improved inventory management
+- Reduced food wastage
+- Increased operational efficiency
+- Data-driven decision making
+- Higher customer retention
+- Better restaurant profitability
+
+---
+
+# 👥 Target Users
+
+- Restaurant Owners
+- Restaurant Managers
+- Waiters
+- Kitchen Staff
+- Customers
+- Cafés
+- Hotels
+- Restaurant Chains
+
+---
+
+# 🔮 Future Enhancements
+
+- Voice Ordering
+- IoT Kitchen Integration
+- Robot Waiters
+- Blockchain Loyalty System
+- Facial Recognition Check-in
+- Dynamic Pricing
+- Multi-Branch Management
+- Mobile Applications
+- Smart Kitchen Automation
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
 
 ```bash
-cd server
+git clone https://github.com/ADITYADAV-0/ember-oak.git
+```
+
+## Navigate
+
+```bash
+cd ember-oak
+```
+
+## Install Frontend
+
+```bash
+cd client
 npm install
 ```
 
-### 2. Environment Configuration
-
-Copy `.env.example` to `.env`:
+## Install Backend
 
 ```bash
-cp .env.example .env
+cd ../server
+npm install
 ```
 
-Update your `.env` with appropriate values:
+## Configure Environment Variables
+
+Create a `.env` file.
 
 ```env
 PORT=5000
-NODE_ENV=development
-MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/ember_oak?retryWrites=true&w=majority
-JWT_SECRET=super_secret_jwt_key_ember_oak_2026_change_in_production
-JWT_EXPIRES_IN=7d
-JWT_COOKIE_EXPIRES_IN=7
-GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com
-CLIENT_URL=http://localhost:5173
+
+MONGODB_URI=
+
+JWT_SECRET=
+
+GOOGLE_CLIENT_ID=
+
+GOOGLE_CLIENT_SECRET=
+
+
 ```
 
-### 3. Database Seeding
+---
 
-Populate MongoDB Atlas with Ember & Oak initial categories, menu items, users, and tables:
-
-```bash
-npm run seed
-```
-
-### 4. Running Development Server
-
-Start the development server with live reload:
+## Run Backend
 
 ```bash
 npm run dev
 ```
 
-The API will be available at `http://localhost:5000` (or configured `PORT`).
+## Run Frontend
+
+```bash
+npm run dev
+```
 
 ---
 
-## 🔒 Security & Best Practices
+# 📊 Future Scope
 
-- **Role-Based Access Control**: Enforces permissions for `customer`, `waiter`, `chef`, `host`, `manager`, and `admin`.
-- **JWT Protection**: Secure tokens delivered via HTTP-only cookies or `Authorization: Bearer <token>` headers.
-- **Input Validation**: `express-validator` blocks invalid client payloads.
-- **Rate Limiting**: Protects against brute-force attacks (`20 req/hr` on auth endpoints, `200 req/15min` on general API).
-- **Helmet Headers**: Configures security HTTP headers against XSS and clickjacking.
+- Cloud Kitchen Support
+- Franchise Management
+- Multi-Language Support
+- Mobile Applications
+- AI Sales Prediction
+- Customer Loyalty Programs
+- POS Hardware Integration
 
 ---
 
-## 📚 API & Deployment Documentation
+# 🏆 Hackathon
 
-- Detailed REST API specification: [API_DOCUMENTATION.md](file:///d:/ember-oak/server/API_DOCUMENTATION.md)
-- Step-by-step production deployment guide: [DEPLOYMENT.md](file:///d:/ember-oak/server/DEPLOYMENT.md)
+**VibeAthon 6.0 (2026)**
+
+Problem Statement:
+**Smart Restaurant Management System**
+
+---
+
+# 👨‍💻 Team
+
+**Team Name:** *Tech Guardians*
+
+### Members
+
+- Aditya Yadav 
+- Divyanshu Vishwakarma
+- Yash Verma
+
+---
+
+# 🔗 Links
+
+### Live Demo
+
+```
+https://ember-o.netlify.app
+
+### GitHub Repository
+
+```
+https://github.com/ADITYADAV-0/ember-oak.git
+```
+
+---
+
+# 📄 License
+
+This project is developed for educational and hackathon purposes.
+
+MIT License
+
+---
+
+## ⭐ If you like this project, don't forget to star the repository!
